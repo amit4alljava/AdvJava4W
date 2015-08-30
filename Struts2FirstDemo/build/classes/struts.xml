@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+   <constant name="struts.custom.i18n.resources" value="global" />
+<package name="default" extends="struts-default">
+    
+    <action name="lang" class="com.srivastava.basics.LoginAction" >
+        <interceptor-ref name="i18n"/>
+        <interceptor-ref name="basicStack"/>
+        <result name="success">/login.jsp</result>
+    </action>
+    
+    <action name="myaction" class="com.srivastava.basics.MyFirstAction" method="myMethod">
+        <result name="success">/index.jsp</result>
+    </action>
+    <action name="loginAC" class="com.srivastava.basics.LoginAction" method="login">
+        
+        <result name="success">/welcome.jsp</result>
+        <result name="invalid">/invalid.jsp</result>
+        <result name="input">/login.jsp</result>
+    </action>
+       <!--  <action name="registerAC" class="com.srivastava.basics.LoginAction" method="register">
+        <result name="success">/welcome.jsp</result>
+        <result name="invalid">/invalid.jsp</result>
+    </action> -->
+</package>
+    
+</struts>	
